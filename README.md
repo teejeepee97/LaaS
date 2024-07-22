@@ -6,6 +6,18 @@ Product Owner - Daan, met hulp van Bryan \
 Scrum Master - Vincent, Willem \
 Developers - Thijs, Jodie, Daan, Bryan, Vincent, Willem
 
+# Product Goal
+Om een schaalbaar duurzame leeromgeving te creëren waar users en trainers online toegang krijgen tot verschillende soorten Working Talent lesmateriaal. 
+
+## Definition of Done
+Om steeds een werkend product aan het einde van een week te crëeren, is het noodzekelijk aan de Definition of Done te houden.
+- Alle functies, variables en classes moeten gedocumenteerd zijn met comments, in het engels. 
+- Code peer reviewed door ten minste een ander persoon, view step 6 in Git Workflow.
+- Code moet zonder conflict gemerged worden met main.
+
+# Sprint #1 
+**Sprint Goal** — een eerste versie van het product, in de frontend een tabel van de backend kan zien. Eerste mockup van de frontend te kunnen laten zien.
+
 
 **Priorisations** \
  (P0) - Moet gedaan worden om verder te kunnen gaan. \
@@ -19,15 +31,6 @@ Developers - Thijs, Jodie, Daan, Bryan, Vincent, Willem
 
 ### Naming Convention
  - featName; dus featVincent bijvoorbeeld.
-
-## Definition of Done
-Om steeds een werkend product aan het einde van een week te crëeren, is het noodzekelijk aan de Definition of Done te houden.
-- Alle functies, variables en classes moeten gedocumenteerd zijn met comments, in het engels. 
-- Code peer reviewed door ten minste een ander persoon, view step 6 in Git Workflow.
-- Code moet zonder conflict gemerged worden met main.
-
-# Sprint #1 
-**Sprint Goal** — een eerste versie van het product, in de frontend een tabel van de backend kan zien. Eerste mockup van de frontend kan laten zien.
 
 
 
