@@ -1,0 +1,52 @@
+id;title;author;type;isbn/number;URI;subject
+book1;Scrum for Dummies;Layton, Mark C.;book;9781118905753;NULL;Agile/scrum
+book2;SQL Pocket Guide;Gennick, Jonathan;book;9781449394097;NULL;Databases/SQL
+book3;SQL Pocket Guide;Gennick, Jonathan;book;9781449394097;NULL;Databases/SQL
+book4;The Data Warehouse Toolkit;"Kimball, Ralph; Ross, Margy";book;9781118530801;NULL;Databases/SQL
+book5;The Data Warehouse ETL Toolkit;"Kimball, Ralph; Caserta, Joe";book;9780764567575;NULL;Databases/SQL
+book6;BABOK;International Institute of Business Analysis;book;9781927584026;NULL;Business Analysis
+book7;BABOK;International Institute of Business Analysis;book;9781927584026;NULL;Business Analysis
+book8;Business Analysis;"Paul, Debra; Cadle, James";book;9781780175102;NULL;Business Analysis
+book9;The Pragmatic Programmer;"Thomas, David; Hunt, Andrew";book;9780135957059;NULL;Coding
+book10;Querying Data with Transact-SQL;Ben-Gan, Itzik;book;9781509304332;NULL;Databases/SQL
+book11;Querying Data with Transact-SQL;Ben-Gan, Itzik;book;9781509304332;NULL;Databases/SQL
+book12;Oracle Certified Professional Java SE 11 Developer;"Boyarsky, Jeanne; Selikoff, Scott";book;9781119619130;NULL;Coding
+book13;Handboek ISO 27001 Controls 2022;Wens, van der, Cees;book;9789464652192;NULL;Security
+book14;MTA EXAM: HTML5 Application Development Fundamentals;Microsoft Technology Associate Training;book;6QU00012;NULL;Coding
+book14;MTA EXAM: HTML5 Application Development Fundamentals;Microsoft Technology Associate Training;book;6QU00012;NULL;Coding
+slide1;Kick-off.pdf;Kooi, van der, Jorrit;slidedeck;NULL;;General
+slide2;Agile en Scrum.pdf;Kooi, van der, Jorrit;slidedeck;NULL;;Agile/scrum
+slide3;IT Bootcamp - Security Training - Niek Derksen - 15-07-2024;Derksen, Niek;slidedeck;NULL;;Security
+slide4;Training Introductie SDLC - Niek Derksen.pdf;Derksen, Niek;slidedeck;NULL;;Project Management
+slide5;WT Traineeship Bootcamp Fundamnt Training - IT in een notendop - Niek Derksen.pdf;Derksen, Niek;slidedeck;NULL;;IT fundamentals
+doc1;WT Lesprogramma IT-bootcamp.pdf;Kooi, van der, Jorrit;pdf_file;NULL;;General
+doc2;De Scrumguide;scrumguides.org;weblink;NULL;https://scrumguides.org/;Agile/scrum
+doc3;Design Patterns;Refactoring.guru;weblink;NULL;https://refactoring.guru/design-patterns;Coding
+video1;Agile Product Ownership in a Nutshell;Kniberg, Henrik;video;NULL;https://www.youtube.com/watch?v=502ILHjX9EE;Agile/scrum
+video2;SAFe Explained in Five Minutes;Scaled Agile, Inc.;video;NULL;https://www.youtube.com/watch?v=aW2m-BtCJyE;Agile/scrum
+video3;Large Scaled Scrum: Spotify Model;Odelusi, Femi;video;NULL;https://www.youtube.com/watch?v=Yvfz4HGtoPc&list=PLaEqoYnARQrTewzxx9t2IUnAcfLVB0TTu;Agile/scrum
+video4;Changes to computer thinking - Stephen Fry explains cloud computing;Databarracks;video;NULL;https://www.youtube.com/watch?v=J9LK6EtxzgM;Cloud
+video5;Microsoft Azure Fundamentals Certification Course (AZ-900) - Pass the exam in 3 hours!;freeCodeCamp.org;video;NULL;https://www.youtube.com/watch?v=NKEFWyqJ5XA;Cloud
+tutorial1;SQLzoo;SQLZoo;online_tutorial;NULL;https://sqlzoo.net/wiki/SQL_Tutorial;Databases/SQL
+tutorial2;SQLTutorial;w3schools.com;online_tutorial;NULL;https://www.w3schools.com/sql/default.asp;Databases/SQL
+webinar1;Webinar Low-code met Mendix - 16-04-20;Computrain;webinar;NULL;https://www.youtube.com/watch?v=daL7YpnN0h0;Low-code
+course1;IT for beginners;Putten, van, Maaike;udemy_course;NULL;https://workingtalent.udemy.com/course/it-for-beginners/learn/lecture/13750990#overview;IT fundamentals
+course2;Learn Scrum, understand the Agile principles + prepare for your Agile/Scrum Master Certification in 2024;Despa, Valentin;udemy_course;NULL;https://workingtalent.udemy.com/course/agile-scrum-for-beginners-scrum-master-certification-preparation/learn/lecture/30969450#overview;Agile/scrum
+course3;Introduction to Computer Networks for Non-Techies;Alton Teaches LLC;udemy_course;NULL;https://workingtalent.udemy.com/course/introduction-to-computer-networks/learn/lecture/13563618?course_portion_id=166596&learning_path_id=668704#overview;Networks
+course4;Cloud Computing Fundamentals;Rhim, Mohamed;udemy_course;NULL;https://workingtalent.udemy.com/course/welcome-to-cloud-computing-world/learn/lecture/24594308#overview;Cloud
+course5;Relational Database Design;Brumm, Ben;udemy_course;NULL;https://workingtalent.udemy.com/course/relational-database-design/learn/lecture/1674884?learning_path_id=668704#overview;Databases/SQL
+course6;SQL for Beginners: Learn SQL using MySQL and Database Design;Tim Buchalka’s Learn Programming Academy;udemy_course;NULL;https://workingtalent.udemy.com/course/sql-for-beginners-course/learn/lecture/40417882#overview;Databases/SQL
+course7;The Complete SQL Bootcamp: Go from Zero to Hero;Portilla, Jose;udemy_course;NULL;https://workingtalent.udemy.com/course/the-complete-sql-bootcamp/learn/lecture/19242668#overview;Databases/SQL
+course8;UML and Object-Oriented Design Foundations;Nyisztor, Karoly;udemy_course;NULL;https://workingtalent.udemy.com/course/uml-and-object-oriented-design-foundations/learn/lecture/8770802#overview;Software architecture
+course9;SOLID Principles: Introducing Software Architecture & Design;S, George;udemy_course;NULL;https://workingtalent.udemy.com/course/solid-design/learn/lecture/15983704#overview;Software architecture
+course10;Fundamentals of backend Engineering;Nasser, Hussein;udemy_course;NULL;https://workingtalent.udemy.com/course/fundamentals-of-backend-communications-and-protocols/learn/lecture/34629150#overview;Coding
+course11;Java for Absolute Beginners;H, Nick;udemy_course;NULL;https://workingtalent.udemy.com/course/java-for-absolute-beginners/learn/lecture/21111587#overview;Coding
+course12;50 Projects in 50 Days - HTML, CSS & JavaScript;"Traversy, Brad; Pop, Florin";udemy_course;NULL;https://workingtalent.udemy.com/course/50-projects-50-days/learn/lecture/23594652#overview;Coding
+course13;The Complete Python Bootcamp From Zero to Hero in Python;Portilla, Jose;udemy_course;NULL;https://workingtalent.udemy.com/course/complete-python-bootcamp/learn/lecture/20205526#overview;Coding
+course14;C# Basics for Beginners: Learn C# Fundamentals by Coding;Hamedani, Mosh;udemy_course;NULL;https://workingtalent.udemy.com/course/csharp-tutorial-for-beginners/learn/lecture/2158914#overview;Coding
+course15;Mendix: Low-code application Development Course;Subasi, Tarik;udemy_course;NULL;https://workingtalent.udemy.com/course/mendix-low-code-application-development-course/learn/lecture/30158326#overview;Low-code
+course16;OutSystems Reactive for Beginners;ITup We Ramp You Up;udemy_course;NULL;https://workingtalent.udemy.com/course/outsystems-reactive-web-for-beginners/learn/lecture/19601026#overview;Low-code
+course17;Information Security Management Fundamentals for Non-Techies;Alton Teaches LLC;udemy_course;NULL;https://workingtalent.udemy.com/course/information-security-fundamentals/learn/lecture/4835774#overview;Security
+reader1;SQL Fundamentals;Computrain;reader;CT.SDV.39181.a4_v7;NULL;Databases/SQL
+reader2;Het BADSOC-model;Boertien, Vergouwen, Overduin;reader;NULL;NULL;Soft-skills
+reader3;Training Presentatietechnieken;Boertien, Vergouwen, Overduin;reader;NULL;NULL;Soft-skills
