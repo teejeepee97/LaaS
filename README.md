@@ -6,6 +6,10 @@ Product Owner - Daan, met hulp van Bryan \
 Scrum Master - Vincent, Willem \
 Developers - Thijs, Jodie, Daan, Bryan, Vincent, Willem
 
+**Tools, frameworks, methodes\
+Vanuit hoofdstakeholder - Azure, Java17, Scrum \
+Zelf bedacht - \
+
 # Product Goal
 Om een schaalbaar duurzame leeromgeving te creëren waar users en trainers online toegang krijgen tot verschillende soorten Working Talent lesmateriaal. 
 
