@@ -11,7 +11,7 @@ Vanuit hoofdstakeholder - Azure, Java17, Scrum, Spring \
 Zelf bedacht - \
 
 # Important Links
-- [UML Board + Naming Convention](https://miro.com/welcome/ZVpaVnBBWEdwaUpGSFdicEdJYUNTcmhXaE5QWURaektKY1JlRHRNM1RaYXRQajBlQzQxTFJlRTM1SWQ3bkpsM3wzNDU4NzY0NTk1MjE0NDQzMDUwfDE=?share_link_id=749875759701)
+- [UML Board + Naming Convention](https://miro.com/welcome/ZVpaVnBBWEdwaUpGSFdicEdJYUNTcmhXaE5QWURaektKY1JlRHRNM1RaYXRQajBlQzQxTFJlRTM1SWQ3bkpsM3wzNDU4NzY0NTk1MjEzMjczNDMxfDE=?share_link_id=747589087765)
   
 # Product Goal
 Om een schaalbaar duurzame leeromgeving te creëren waar users en trainers online toegang krijgen tot verschillende soorten Working Talent lesmateriaal. 
