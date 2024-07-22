@@ -6,7 +6,7 @@ Product Owner - Daan, met hulp van Bryan \
 Scrum Master - Vincent, Willem \
 Developers - Thijs, Jodie, Daan, Bryan, Vincent, Willem
 
-**Tools, frameworks, methodes\
+**Tools, frameworks, methodes**\
 Vanuit hoofdstakeholder - Azure, Java17, Scrum \
 Zelf bedacht - \
 
