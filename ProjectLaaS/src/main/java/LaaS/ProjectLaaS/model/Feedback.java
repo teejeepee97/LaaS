@@ -6,18 +6,25 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Trainer {
+public class Feedback {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
-	private int TrainerId;
+	private int feedbackId;
+	private int feedbackRating;
 	private int userId;
 	
-	public int getTrainerId() {
-		return TrainerId;
+	public int getFeedbackId() {
+		return feedbackId;
 	}
-	public void setTrainerId(int trainerId) {
-		TrainerId = trainerId;
+	public void setFeedbackId(int feedbackId) {
+		this.feedbackId = feedbackId;
+	}
+	public int getFeedbackRating() {
+		return feedbackRating;
+	}
+	public void setFeedbackRating(int feedbackRating) {
+		this.feedbackRating = feedbackRating;
 	}
 	public int getUserId() {
 		return userId;
@@ -26,7 +33,8 @@ public class Trainer {
 		this.userId = userId;
 	}
 	
-	
 
+	
+	
 	
 }
