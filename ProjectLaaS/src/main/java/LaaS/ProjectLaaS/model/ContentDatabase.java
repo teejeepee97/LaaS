@@ -8,12 +8,13 @@ import jakarta.persistence.Id;
 @Entity
 public class ContentDatabase {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
 	private int contentId;
 	private int courseId;
 	private String contentDescription;
 	private String contentSubject;
+	
 	public int getContentId() {
 		return contentId;
 	}
@@ -38,9 +39,6 @@ public class ContentDatabase {
 	public void setContentSubject(String contentSubject) {
 		this.contentSubject = contentSubject;
 	}
-	
-	
-	
 
 	
 }

@@ -6,18 +6,18 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Books {
+public class Readers {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
-	private int bookId;
+	private int readerId ;
 	private int physicalContentId;
 	
-	public int getBookId() {
-		return bookId;
+	public int getReaderId() {
+		return readerId;
 	}
-	public void setBookId(int bookId) {
-		this.bookId = bookId;
+	public void setReaderId(int readerId) {
+		this.readerId = readerId;
 	}
 	public int getPhysicalContentId() {
 		return physicalContentId;
@@ -25,7 +25,6 @@ public class Books {
 	public void setPhysicalContentId(int physicalContentId) {
 		this.physicalContentId = physicalContentId;
 	}
-	
 
 	
 }
