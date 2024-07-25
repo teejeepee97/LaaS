@@ -7,8 +7,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 
 @Entity
 public class LearningPaths {
@@ -18,15 +16,6 @@ public class LearningPaths {
 	private int learningPathId ;
 	private String learningPathName;
 	private int userId;
-	private int trainerId;
-//	private int traineeId;
-	
-	@OneToMany
-	private List <Trainee> StudentenX = new ArrayList();
-	
-	@OneToOne
-	private Trainee StudentenJ;
-	
 	
 	
 	public int getLearningPathId() {
@@ -47,17 +36,6 @@ public class LearningPaths {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	public int getTrainerId() {
-		return trainerId;
-	}
-	public void setTrainerId(int trainerId) {
-		this.trainerId = trainerId;
-	}
-//	public int getTraineeId() {
-//		return traineeId;
-//	}
-//	public void setTraineeId(int traineeId) {
-//		this.traineeId = traineeId;
-//	}
+	
 	
 }
