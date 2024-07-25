@@ -3,6 +3,8 @@ package LaaS.ProjectLaaS.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.annotations.ManyToAny;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,15 +15,18 @@ public class LearningPaths {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
-	private int learningPathId ;
+	private long learningPathId ;
 	private String learningPathName;
 	private int userId;
 	
+	@ManyToAny
+	private List <Course> Courses = new ArrayList();	
 	
-	public int getLearningPathId() {
+	
+	public long getLearningPathId() {
 		return learningPathId;
 	}
-	public void setLearningPathId(int learningPathId) {
+	public void setLearningPathId(long learningPathId) {
 		this.learningPathId = learningPathId;
 	}
 	public String getLearningPathName() {

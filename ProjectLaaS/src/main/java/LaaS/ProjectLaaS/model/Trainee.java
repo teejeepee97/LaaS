@@ -12,7 +12,7 @@ public class Trainee extends User{
 	private String learningPathEnrollment;
 	
 	@ManyToMany
-	private List <LearningPaths> LearningPaths = new ArrayList();		
+	private List <LearningPaths> LearningPathsTrainee = new ArrayList();		
 	
 	
 	public String getLearningPathEnrollment() {
