@@ -10,15 +10,15 @@ public class ContentDatabase {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
-	private int contentId;
+	private long contentId;
 	private int courseId;
 	private String contentDescription;
 	private String contentSubject;
 	
-	public int getContentId() {
+	public long getContentId() {
 		return contentId;
 	}
-	public void setContentId(int contentId) {
+	public void setContentId(long contentId) {
 		this.contentId = contentId;
 	}
 	public int getCourseId() {

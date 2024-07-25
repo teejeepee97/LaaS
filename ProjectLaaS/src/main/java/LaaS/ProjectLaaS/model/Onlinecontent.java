@@ -4,19 +4,22 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
 
-@Entity
+@MappedSuperclass
 public class Onlinecontent {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
-	private int onlineContentId ;
+	private long onlineContentId;
 	private int contentId;
 	
-	public int getOnlineContentId() {
+	int b;
+	
+	public long getOnlineContentId() {
 		return onlineContentId;
 	}
-	public void setOnlineContentId(int onlineContentId) {
+	public void setOnlineContentId(long onlineContentId) {
 		this.onlineContentId = onlineContentId;
 	}
 	public int getContentId() {
