@@ -1,32 +1,17 @@
 package LaaS.ProjectLaaS.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 
 @Entity
-public class Trainer {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Trainer extends User{
+
 	
-	private int TrainerId;
-	private int userId;
-	
-	public int getTrainerId() {
-		return TrainerId;
-	}
-	public void setTrainerId(int trainerId) {
-		TrainerId = trainerId;
-	}
-	public int getUserId() {
-		return userId;
-	}
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-	
-	
+	@ManyToMany
+	private List <LearningPaths> LearningPathsTrainer = new ArrayList();
 
 	
 }

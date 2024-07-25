@@ -1,5 +1,8 @@
 package LaaS.ProjectLaaS.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,15 +13,18 @@ public class Course {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
-	private int courseId;
+	private long courseId;
 	private String courseName;
 	private String description;
-	private int learningPathId;
 	
-	public int getCourseId() {
+//	@ManytoMany
+//	private List <LearningPaths> LearningPathsTrainee = new ArrayList();		
+	
+
+	public long getCourseId() {
 		return courseId;
 	}
-	public void setCourseId(int courseId) {
+	public void setCourseId(long courseId) {
 		this.courseId = courseId;
 	}
 	public String getCourseName() {
@@ -33,13 +39,6 @@ public class Course {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public int getLearningPathId() {
-		return learningPathId;
-	}
-	public void setLearningPathId(int learningPathId) {
-		this.learningPathId = learningPathId;
-	}
-	
 	
 	
 }

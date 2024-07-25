@@ -4,9 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import LaaS.ProjectLaaS.model.Trainee;
+import LaaS.ProjectLaaS.model.Trainer;
 
 @Service
-public class UserService {
+public class ViewContentService {
 	
 	@Autowired
 	private TraineeRepository traineer;
@@ -15,9 +16,16 @@ public class UserService {
 	private TrainerRepository trainerr;
 	
 //	Not Final code
-	public void slaEenUserOp(Trainee trainee) {
-		traineer.save(trainee);
+	
+	public Iterable<Trainee> geefAlleTrainees() {
+		return traineer.findAll();
 		
 	}
+	
+	public Iterable<Trainer> geefAlleTrainers() {
+		return trainerr.findAll();
+		
+	}
+
 
 }
