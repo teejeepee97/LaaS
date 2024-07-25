@@ -12,7 +12,7 @@ public class UserEndpoint {
 	@Autowired
 	UserService us;
 	
-	@GetMapping("users")
+	@GetMapping("/users")
 	public Iterable<User> alleUsers(){
 		return us.geefAlleUsers();
 	}
