@@ -125,7 +125,7 @@ If you run into issue with your feature branch conflicting with the main, it may
 git reset             // This will unstage all files you might have staged with git add .
 git checkout main     // This will revert local uncommited changes (execture in main)
 // Alternatively
-git reset --hard main // This will revery all uncommitted changes (works from any directory)
+git reset --hard main // This will revert all uncommitted changes (works from any directory)
 
 git clean -n          // Preview of files to be deleted
 git clean -fdx        // Removes all non-committed data, even what is in .gitignore
