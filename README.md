@@ -8,11 +8,12 @@ Developers - Thijs, Jodie, Daan, Bryan, Vincent, Willem
 
 **Tools, frameworks, methodes**\
 Vanuit hoofdstakeholder - Azure, Java17, Scrum, Spring \
-Zelf bedacht - \
+Zelf bedacht - Miro, Figma \
 
 # Important Links
 - [UML Board + Naming Convention](https://miro.com/welcome/ZVpaVnBBWEdwaUpGSFdicEdJYUNTcmhXaE5QWURaektKY1JlRHRNM1RaYXRQajBlQzQxTFJlRTM1SWQ3bkpsM3wzNDU4NzY0NTk1MjEzMjczNDMxfDE=?share_link_id=747589087765)
-  
+- [Figma Wireframe of Frontend](https://www.figma.com/design/x1BJVGugJIE6LaH6gBwHM3/Figma-basics?node-id=663-257&t=H9rXsKOxWA448cgE-0)
+
 # Product Goal
 Om een schaalbaar duurzame leeromgeving te creëren waar users en trainers online toegang krijgen tot verschillende soorten Working Talent lesmateriaal. 
 
@@ -116,4 +117,16 @@ git merge origin/main
 git add .
 git commit -m "Resolve merge conflicts"
 git push origin [featVincent]
+```
+## Resetting a failed feature branch ##
+If you run into issue with your feature branch conflicting with the main, it may be time to reset the feature branch to the main. To do this, save the important changes to a serperate file to copy later. 
+**WARNING: This will reset all changes and remove all files including .gitignore files in your local repository.**
+```
+git reset             // This will unstage all files you might have staged with git add .
+git checkout main     // This will revert local uncommited changes (execture in main)
+// Alternatively
+git reset --hard main // This will revery all uncommitted changes (works from any directory)
+
+git clean -n          // Preview of files to be deleted
+git clean -fdx        // Removes all non-committed data, even what is in .gitignore
 ```
