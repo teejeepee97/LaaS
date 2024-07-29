@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 
 @Entity
 public class LearningPaths {
@@ -19,7 +20,7 @@ public class LearningPaths {
 	private String learningPathName;
 	private int userId;
 	
-	@ManyToAny
+	@ManyToMany
 	private List <Course> Courses = new ArrayList();	
 	
 	
