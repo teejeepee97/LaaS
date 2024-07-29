@@ -35,10 +35,10 @@ public class LearningPaths {
 	public void setLearningPathName(String learningPathName) {
 		this.learningPathName = learningPathName;
 	}
-	public int getUserId() {
+	public long getUserId() {
 		return userId;
 	}
-	public void setUserId(int userId) {
+	public void setUserId(long userId) {
 		this.userId = userId;
 	}
 	
