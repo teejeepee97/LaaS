@@ -4,13 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
 @Entity
 public class Trainee extends User{
 	
 	private String learningPathEnrollment;
+	
+	@OneToMany
+	private List<Reservations> reservation;
 	
 	@OneToOne
 	private LearningPaths LearningPathsTrainee;		
@@ -27,6 +30,12 @@ public class Trainee extends User{
 	}
 	public void setLearningPathsTrainee(LearningPaths learningPathsTrainee) {
 		LearningPathsTrainee = learningPathsTrainee;
+	}
+	public List<Reservations> getReservation() {
+		return reservation;
+	}
+	public void setReservation(List<Reservations> reservation) {
+		this.reservation = reservation;
 	}
 
 
