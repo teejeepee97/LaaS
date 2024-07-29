@@ -13,6 +13,7 @@ Zelf bedacht - Miro, Figma \
 # Important Links
 - [UML Board + Naming Convention](https://miro.com/welcome/ZVpaVnBBWEdwaUpGSFdicEdJYUNTcmhXaE5QWURaektKY1JlRHRNM1RaYXRQajBlQzQxTFJlRTM1SWQ3bkpsM3wzNDU4NzY0NTk1MjEzMjczNDMxfDE=?share_link_id=747589087765)
 - [Figma Wireframe of Frontend](https://www.figma.com/design/x1BJVGugJIE6LaH6gBwHM3/Figma-basics?node-id=663-257&t=H9rXsKOxWA448cgE-0)
+- [Google Drive with Scribe Documents ](https://drive.google.com/drive/folders/10quoWjexfc7n-hoXEURAMchqeU_B9b36?usp=sharing)
 
 # Product Goal
 Om een schaalbaar duurzame leeromgeving te creëren waar users en trainers online toegang krijgen tot verschillende soorten Working Talent lesmateriaal. 
