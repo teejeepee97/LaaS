@@ -17,10 +17,10 @@ public class LearningPaths {
 	
 	private long learningPathId ;
 	private String learningPathName;
-	private int userId;
+	private long userId;
 	
-	@ManyToAny
-	private List <Course> Courses = new ArrayList();	
+//	@ManyToAny
+//	private List <Course> Courses = new ArrayList();	
 	
 	
 	public long getLearningPathId() {
