@@ -10,7 +10,7 @@ public class BookService {
 	private TraineeRepository traineer;
 	
 	@Autowired
-	private TrainerRepository trainerr;
+	private FrontDeskRepository frontdeskr;
 	
 //	Not Final code
 
