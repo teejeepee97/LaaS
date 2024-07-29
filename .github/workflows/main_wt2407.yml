@@ -23,7 +23,7 @@ jobs:
           distribution: 'microsoft'
 
       - name: Navigate to subdirectory
-        run: cd repository/ProjectLaaS
+        run: cd ./ProjectLaaS
 
       - name: Build with Maven
         run: mvn clean install
