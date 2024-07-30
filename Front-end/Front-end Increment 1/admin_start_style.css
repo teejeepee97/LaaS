@@ -1,0 +1,45 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+.title{
+    text-align: center;
+}
+
+body{
+    background-color: lightgreen;
+}
+
+.lesmateriaalList{
+    text-align: left;
+}
+
+.container{
+    background:white;
+    width: 450px;
+    padding: 1.5rem;
+    margin: 50px auto;
+    border-radius:  10px;
+    box-shadow: 0 20px 35px rgba(0,0,1,0.9);
+    text-align: center;
+
+}
+
+.TMTableMakeup{
+    background:white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.formatCheckString{
+    text-align: center;
+}
+
+.FormatTableMakeup{
+    background:white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}

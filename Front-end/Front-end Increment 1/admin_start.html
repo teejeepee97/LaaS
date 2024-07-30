@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Start Page</title>
+    <!--<link rel="stylesheet" href="style.css">-->
+    <!-- <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css' rel='stylesheet'> -->
+    <link rel="stylesheet" href="admin_start_style.css">
+</head>
+<body>
+	<div class="title">
+		<h1>Welkom op de Admin start pagina van het Learning as a Service platform van Working Talent!</h1>
+	</div>
+	<div class="lesmateriaalList" id="allTeachingMaterials">Beschikbare lesmaterialen:
+        <ul class="lesmateriaalList">
+            <li>book</li>
+            <li>slidedeck</li>
+            <li>pdf_file</li>
+            <li>weblink</li>
+            <li>video</li>
+            <li>online_tutorial</li>
+            <li>webinar</li>
+            <li>udemy_course</li>
+            <li>reader</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h3>Alle lesmaterialen</h3>
+        <button onclick="showTeachingMaterials()">Klik voor alle lesmaterialen.</button>
+        <button onclick="blockTeachingMaterials()">Klik om de lesmaterialen tabel weg te halen.</button><br>
+    </div>
+
+    <div class="container">
+        <h3>Lesmaterialen per type</h3>
+        <input id="materialFormat">
+        <button onclick="showTeachingMaterialsPerFormat()">Klik voor een specifiek lesmateriaal format.</button>
+        <button onclick="blockTeachingMaterialsPerFormat()">Klik om de format tabel weg te halen.</button>
+    </div>
+
+    <div class="formatCheckString" id="formatCheck"></div>
+    <div class="TMTableMakeup" id="TMTable"></div>
+    <div class="FormatTableMakeup" id="FormatTable"></div>
+
+    <script>
+        let a = localStorage.getItem("kukeleku");
+        console.log(a);
+        if(a != "ingelogd"){
+            window.location = "invoer.html";
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
