@@ -17,10 +17,10 @@ public class LearningPaths {
 	
 	private long learningPathId ;
 	private String learningPathName;
-	private int userId;
+	private long userId;
 	
-	@ManyToAny
-	private List <Course> Courses = new ArrayList();	
+//	@ManyToAny
+//	private List <Course> Courses = new ArrayList();	
 	
 	
 	public long getLearningPathId() {
@@ -35,10 +35,10 @@ public class LearningPaths {
 	public void setLearningPathName(String learningPathName) {
 		this.learningPathName = learningPathName;
 	}
-	public int getUserId() {
+	public long getUserId() {
 		return userId;
 	}
-	public void setUserId(int userId) {
+	public void setUserId(long userId) {
 		this.userId = userId;
 	}
 	
