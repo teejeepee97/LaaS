@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Reservations {
@@ -18,7 +19,25 @@ public class Reservations {
 	private int userId;
 	private boolean reservationStatus;
 	
+	@ManyToOne
+	private Trainee trainee;
 	
+	@ManyToOne
+	private Books book;
+	
+	public Trainee getTrainee() {
+		return trainee;
+	}
+	public void setTrainee(Trainee trainee) {
+		this.trainee = trainee;
+	}
+	public Books getBook() {
+		return book;
+	}
+	public void setBook(Books book) {
+		this.book = book;
+	}
+
 	public long getReservationId() {
 		return reservationId;
 	}

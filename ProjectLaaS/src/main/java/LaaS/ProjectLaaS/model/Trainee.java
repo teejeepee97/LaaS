@@ -37,9 +37,5 @@ public class Trainee extends User{
 	public void setReservation(List<Reservations> reservation) {
 		this.reservation = reservation;
 	}
-
-
-
-	
 	
 }
