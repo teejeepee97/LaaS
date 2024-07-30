@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <div class="container" id="signIn">
+        <h1 class="form-title">Sign in</h1>
+        <form action="post" action="">
+
+            <div class="input-group">
+                <i class='fas fa-user'></i>
+                <input type="text" id="username" placeholder="Username" required>
+                <label for="un">Username</label>
+            </div>
+
+            <div class="input-group">
+                <i class='fas fa-lock'></i>
+                <input type="password" id="password" placeholder="Password" required>
+                <label for="pw">Password</label>
+            </div>
+
+            <!-- <div class="remember-forget">
+                <label><input type="checkbox">Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div> -->
+            
+        </form>
+        <button onclick="checkCredentials()" type="submit" class="btn">Login</button>
+    </div>
+    <div class="wtimage">
+        <form action="post">
+            <img src="https://media.licdn.com/dms/image/C4E0BAQH6Ue_l0GrOng/company-logo_200_200/0/1630656294598/working_talent_bv_logo?e=2147483647&v=beta&t=VT2JHmPxJoGx5U1TEE_FRDK3zWxX_JDehxgpK3GibDs" alt="">
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
