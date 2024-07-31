@@ -1,6 +1,7 @@
 package LaaS.ProjectLaaS.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,13 +12,13 @@ import LaaS.ProjectLaaS.persistence.BookService;
 
 
 @RestController
-@RequestMapping("Books")
+@RequestMapping
 public class BookEndpoint {
 	
 	@Autowired
 	private BookService BookService; 
 	
-	@PostMapping("/reserve")
+	@GetMapping("/reserve")
     public Reservations reserveBook(@RequestParam long userId, @RequestParam long physicalContentId) {
         return BookService.reserveBook(userId, physicalContentId);
     }
