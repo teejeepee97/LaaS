@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import LaaS.ProjectLaaS.model.Books;
+import LaaS.ProjectLaaS.model.ReservationStatus;
 import LaaS.ProjectLaaS.model.Reservations;
 import LaaS.ProjectLaaS.model.Trainee;
 
@@ -39,11 +40,20 @@ public class BookService {
 
         Reservations reservation = new Reservations();
         reservation.setTrainee(trainee);
-        reservation.setBook(book);
-        reservation.setBookName(book.getContentName());
+        reservation.setBook(book); // Associate the book entity
+        reservation.setBookName(book.getContentName()); // Set the book name
         reservation.setReservationDate(new Date(System.currentTimeMillis()));
-        reservation.setReservationStatus(true);
+        reservation.setReservationStatus(ReservationStatus.IN_AFWACHTING); // Set the initial reservation status
 
-        return reservationsRepository.save(reservation);
+        return reservationsRepository.save(reservation);   
+	}
+	
+	public void updateReservationStatus(Long reservationId, ReservationStatus status) {
+		Reservations reservation = reservationsRepository.findById(reservationId)
+                .orElseThrow(() -> new RuntimeException("Reservation not found"));
+		
+	
+        reservation.setReservationStatus(status);
+        reservationsRepository.save(reservation);
 	}
 }

@@ -4,6 +4,8 @@ import java.sql.Date;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -17,7 +19,10 @@ public class Reservations {
 	private long reservationId;
 	private Date reservationDate;
 	private int userId;
-	private boolean reservationStatus;
+	
+	@Enumerated(EnumType.STRING)
+	private ReservationStatus reservationStatus;
+	
 	private String bookName;
 	
 	public String getBookName() {
@@ -63,11 +68,12 @@ public class Reservations {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	public boolean isReservationStatus() {
-		return reservationStatus;
-	}
-	public void setReservationStatus(boolean reservationStatus) {
-		this.reservationStatus = reservationStatus;
-	}
+	public ReservationStatus getReservationStatus() {
+        return reservationStatus;
+    }
+
+    public void setReservationStatus(ReservationStatus reservationStatus) {
+        this.reservationStatus = reservationStatus;
+    }
 
 }
