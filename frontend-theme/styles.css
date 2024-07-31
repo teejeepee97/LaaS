@@ -1,0 +1,133 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo span {
+  color: green;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.trainer-btn {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+main {
+  padding: 2rem;
+}
+
+.learning-paths {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.learning-paths h1 {
+  margin-bottom: 1rem;
+}
+
+.add-path-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  float: right;
+}
+
+.paths {
+  margin-top: 2rem;
+}
+
+.path {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.path-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.path-details h2 {
+  margin: 0;
+}
+
+.path-details p {
+  color: green;
+}
+
+.manage-enrollment-btn,
+.path-analytics-btn,
+.modify-content-btn {
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+footer {
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ccc;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.footer-content .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.footer-content .social-media a {
+  margin-left: 1rem;
+}
