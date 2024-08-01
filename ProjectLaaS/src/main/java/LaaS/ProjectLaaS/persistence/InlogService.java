@@ -27,5 +27,14 @@ public class InlogService {
 		
 	}
 
-
+	  public boolean authenticate(Long userId, String password) {
+	        Trainee trainee = traineer.findByUserId(userId)
+	                .orElseThrow(() -> new RuntimeException("Trainee not found"));
+	        
+	        if (trainee != null) {
+	            return trainee.getPasswordHash().equals(password);
+	        }
+	        
+	        return false;
+	    }
 }
