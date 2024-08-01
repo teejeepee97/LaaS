@@ -4,6 +4,131 @@
   padding: 0;
 }
 
+:root {
+  --wt-groen: #00e600;
+  --wt-donker-grijs: #5a5a5a;
+}
+
 body {
-  font-family
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container{
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.nav{
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.nav ul{
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav a{
+  display: flex;
+  color: #000;
+  text-decoration: none;
+  padding: 7px 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.logo img{
+  width: 100%;
+  max-width: 200px;
+  margin: 5px;
+}
+
+.topright-button{
+    background-color: var(--wt-groen);
+    height: 2rem;
+    width: 9rem;
+    padding: .25rem .5rem;
+    margin: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.topright-button:hover{
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+footer {
+  background-color: #000;
+  color:#fff;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+}
+
+footer .social-media {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+footer .social-media a img {
+  height: 30px;
+}
+
+.media-circle{
+  display:flex;
+  height: 3.5rem;
+  width: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.media-circle:hover{
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+.footer-line {
+  width: 90%;
+  margin: 20px;
+  border: none;
+  border-top: 2px solid var(--wt-donker-grijs); /* Light gray line */
+}
+
+.voorwaarden-container {
+  display: flex;
+  text-align: left;
+  width: 90%;
+}
+
+.voorwaarden-container a {
+  color: var(--wt-donker-grijs);
+}
+
+.voorwaarden-link:hover {
+  text-decoration: underline;
 }
