@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import LaaS.ProjectLaaS.model.Books;
+import LaaS.ProjectLaaS.model.ReservationStatus;
 import LaaS.ProjectLaaS.model.Reservations;
 import LaaS.ProjectLaaS.model.Trainee;
 
@@ -26,20 +27,33 @@ public class BookService {
 	                .orElseThrow(() -> new RuntimeException("Trainee not found"));
 
 		Books book = booksRepository.findByPhysicalContentId(physicalContentId);
-	        		 new RuntimeException("Book not found");
+	    new RuntimeException("Book not found");
+	    
+	    //Check if the book is available
+	    if (book.getAmount() <= 0) {
+	    	throw new RuntimeException("Book not available");
+	    }
+	    
+	    //Decrease the amount by 1
+	    book.setAmount(book.getAmount()-1);
+	    booksRepository.save(book);
 
         Reservations reservation = new Reservations();
         reservation.setTrainee(trainee);
-        reservation.setBook(book);
+        reservation.setBook(book); // Associate the book entity
+        reservation.setBookName(book.getContentName()); // Set the book name
         reservation.setReservationDate(new Date(System.currentTimeMillis()));
-        reservation.setReservationStatus(true);
+        reservation.setReservationStatus(ReservationStatus.IN_AFWACHTING); // Set the initial reservation status
 
-        return reservationsRepository.save(reservation);
+        return reservationsRepository.save(reservation);   
 	}
 	
+	public void updateReservationStatus(Long reservationId, ReservationStatus status) {
+		Reservations reservation = reservationsRepository.findById(reservationId)
+                .orElseThrow(() -> new RuntimeException("Reservation not found"));
+		
 	
-	
-//	Not Final code
-
-
+        reservation.setReservationStatus(status);
+        reservationsRepository.save(reservation);
+	}
 }
