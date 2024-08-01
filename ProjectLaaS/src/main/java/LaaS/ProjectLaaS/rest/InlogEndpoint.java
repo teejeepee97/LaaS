@@ -2,24 +2,31 @@ package LaaS.ProjectLaaS.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import LaaS.ProjectLaaS.model.Trainee;
 import LaaS.ProjectLaaS.persistence.InlogService;
 
 @RestController
+@RequestMapping
 public class InlogEndpoint {
-
+	
 	@Autowired
-	InlogService inlogs;
+	private final InlogService inlogService = new InlogService();
+
 	
-//	Not Final code
+	@GetMapping("/login")
+    public String login(@RequestParam String username, @RequestParam String password) {
+        if (inlogService.authenticate(username, password)) {
+            return "Login successful!";
+        } else {
+            return "Invalid username or password.";
+        }
+    }
 	
-	@GetMapping("/trainees")
-	public Iterable<Trainee> alleTrainees(){
-		return inlogs.geefAlleTrainees();
-	}
+}
 	
 	
 
-}

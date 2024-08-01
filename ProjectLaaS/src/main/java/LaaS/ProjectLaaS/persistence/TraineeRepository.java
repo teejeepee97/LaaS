@@ -11,5 +11,8 @@ import LaaS.ProjectLaaS.model.Trainee;
 public interface TraineeRepository extends CrudRepository <Trainee, Long>{
 
 	Optional<Trainee> findByUserId(long userId);
+	
+	Optional<Trainee> findByName(String name);
+	
 		
 }

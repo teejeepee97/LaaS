@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import LaaS.ProjectLaaS.model.Trainee;
 import LaaS.ProjectLaaS.model.Trainer;
+import LaaS.ProjectLaaS.model.User;
 
 @Service
 public class InlogService {
@@ -27,5 +28,14 @@ public class InlogService {
 		
 	}
 
-
+    public boolean authenticate(String username, String password) {
+        Trainee trainee = traineer.findByName(username)
+                .orElseThrow(() -> new RuntimeException("Trainee not found"));
+        
+        if (trainee != null) {
+            return trainee.getPasswordHash().equals(password);
+        }
+        
+        return false;
+    }
 }
