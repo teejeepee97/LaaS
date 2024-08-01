@@ -52,8 +52,34 @@ public class BookService {
 		Reservations reservation = reservationsRepository.findById(reservationId)
                 .orElseThrow(() -> new RuntimeException("Reservation not found"));
 		
+		
+		 if (status == ReservationStatus.TERUG_GEBRACHT) {
+	            Books book = reservation.getBook();
+	            if (book != null) {
+	                book.setAmount(book.getAmount() + 1);
+	                booksRepository.save(book);
+	            }
+	        }
 	
         reservation.setReservationStatus(status);
         reservationsRepository.save(reservation);
+	}
+	
+	
+	
+	public Books addBook(String contentName, String contentDescription, String contentSubject, int amount, boolean available, String physicalWear) {
+		int nextPhysicalContentId = booksRepository.findMaxPhysicalContentId().orElse(0) + 1;
+		
+		Books book = new Books();
+        book.setContentName(contentName);
+        book.setContentDescription(contentDescription);
+        book.setContentSubject(contentSubject);
+        book.setAmount(amount);
+        book.setAvailable(available);
+        book.setPhysicalContentId(nextPhysicalContentId);
+        book.setPhysicalWear(physicalWear);
+
+        return booksRepository.save(book);
+        
 	}
 }
