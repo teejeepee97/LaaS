@@ -14,7 +14,6 @@ import LaaS.ProjectLaaS.persistence.BookService;
 
 
 @RestController
-@RequestMapping("/api/books")
 public class BookEndpoint {
 	
 	@Autowired
