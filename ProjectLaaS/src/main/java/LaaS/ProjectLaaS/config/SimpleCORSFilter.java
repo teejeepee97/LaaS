@@ -11,6 +11,9 @@ public class SimpleCORSFilter implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedOrigins("*")  // Add your frontend origin(s) here
-                .allowedMethods("GET", "POST", "PUT", "DELETE");
+                .allowedMethods("GET", "POST", "PUT", "DELETE")
+        		.allowedHeaders("*")
+        		.allowCredentials(true);  // Allow credentials (cookies, authorization headers, etc.)
+
     }
 }
