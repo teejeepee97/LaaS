@@ -78,6 +78,14 @@ public class BookService {
 		Reservations reservation = reservationsRepository.findById(reservationId)
                 .orElseThrow(() -> new RuntimeException("Reservation not found"));
 		
+		
+		 if (status == ReservationStatus.TERUG_GEBRACHT) {
+	            Books book = reservation.getBook();
+	            if (book != null) {
+	                book.setAmount(book.getAmount() + 1);
+	                booksRepository.save(book);
+	            }
+	        }
 	
         reservation.setReservationStatus(status);
         reservationsRepository.save(reservation);
