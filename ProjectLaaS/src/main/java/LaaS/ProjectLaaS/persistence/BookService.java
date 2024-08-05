@@ -48,6 +48,32 @@ public class BookService {
         return reservationsRepository.save(reservation);   
 	}
 	
+	public Books reserveBookFrontEnd(Long userId, Long contentId) {
+		Books book = booksRepository.findByContentId(contentId);
+	    
+	    
+	    if(book.isAvailable()) {
+	    	book.setAvailable(false);
+	    }
+	    else {
+	    	new RuntimeException("Book not available");
+	    }
+	    return booksRepository.save(book);
+	}
+	
+	public Books returnBookFrontEnd(Long userId, Long contentId) {
+		Books book = booksRepository.findByContentId(contentId);
+		System.out.println(book.isAvailable());
+		
+		if(!book.isAvailable()) {
+			book.setAvailable(true);
+		}
+		else {
+	    	new RuntimeException("Book is available");
+	    }
+		return booksRepository.save(book);
+	}
+	
 	public void updateReservationStatus(Long reservationId, ReservationStatus status) {
 		Reservations reservation = reservationsRepository.findById(reservationId)
                 .orElseThrow(() -> new RuntimeException("Reservation not found"));
@@ -65,21 +91,12 @@ public class BookService {
         reservationsRepository.save(reservation);
 	}
 	
-	
-	
-	public Books addBook(String contentName, String contentDescription, String contentSubject, int amount, boolean available, String physicalWear) {
-		int nextPhysicalContentId = booksRepository.findMaxPhysicalContentId().orElse(0) + 1;
-		
-		Books book = new Books();
-        book.setContentName(contentName);
-        book.setContentDescription(contentDescription);
-        book.setContentSubject(contentSubject);
-        book.setAmount(amount);
-        book.setAvailable(available);
-        book.setPhysicalContentId(nextPhysicalContentId);
-        book.setPhysicalWear(physicalWear);
+	public Iterable<Books> showBooks() {
+		return booksRepository.findAll();
+	}
 
-        return booksRepository.save(book);
-        
+	public void saveBook(Books book) {
+		booksRepository.save(book);
+		
 	}
 }
