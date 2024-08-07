@@ -3,6 +3,7 @@ package LaaS.ProjectLaaS.persistence;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import LaaS.ProjectLaaS.model.Books;
 import LaaS.ProjectLaaS.model.Trainee;
 import LaaS.ProjectLaaS.model.Trainer;
 import LaaS.ProjectLaaS.model.User;
@@ -38,5 +39,4 @@ public class InlogService {
         
         return false;
     }
-
 }
