@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import LaaS.ProjectLaaS.model.Books;
+import LaaS.ProjectLaaS.model.User;
 import LaaS.ProjectLaaS.persistence.InlogService;
 
 @RestController
@@ -21,15 +22,17 @@ public class InlogEndpoint {
 
 	
 	@GetMapping("/login/{username}/{password}")
-    public String login(@PathVariable String username, @PathVariable String password) {
+    public User login(@PathVariable String username, @PathVariable String password) {
 		try {
-	        if (inlogService.authenticate(username, password)) {
-	            return "Login successful!";
+			if (true) {
+//	        if (inlogService.authenticate(username, password) != null) {
+//	            return inlogService.authenticate(username, password);
+	        	return null;
 	        } else {
-	            return "Invalid username or password.";
+	            return null;
 	        }
 		} catch(Exception e) {
-			return "Unknown username";
+			return null;
 		}
 	}
 }
