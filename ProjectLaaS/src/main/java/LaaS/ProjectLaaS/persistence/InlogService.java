@@ -3,6 +3,7 @@ package LaaS.ProjectLaaS.persistence;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import LaaS.ProjectLaaS.model.Books;
 import LaaS.ProjectLaaS.model.Trainee;
 import LaaS.ProjectLaaS.model.Trainer;
 import LaaS.ProjectLaaS.model.User;
@@ -28,15 +29,16 @@ public class InlogService {
 		
 	}
 
-    public boolean authenticate(String username, String password) {
+    public User authenticate(String username, String password) {
         Trainee trainee = traineer.findByName(username)
                 .orElseThrow(() -> new RuntimeException("Trainee not found"));
         
         if (trainee != null) {
-            return trainee.getPasswordHash().equals(password);
+            if (trainee.getPasswordHash().equals(password)){
+            	return trainee;
+            }
         }
         
-        return false;
+        return null;
     }
-
 }
