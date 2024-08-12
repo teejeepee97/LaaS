@@ -96,7 +96,7 @@ main {
   padding: 20px;
   border-radius: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -113,14 +113,13 @@ main {
   width: 100px;
 }
 
-.path-info h2 {
+.path-info h4 {
   font-size: 1.5em;
   margin: 0;
 }
 
 .path-info p {
   color: #888;
-  margin: 0;
 }
 
 .manage-enrollment {

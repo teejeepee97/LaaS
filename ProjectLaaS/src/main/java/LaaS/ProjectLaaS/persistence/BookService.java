@@ -1,6 +1,8 @@
 package LaaS.ProjectLaaS.persistence;
 
 import java.sql.Date;
+import java.util.Iterator;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -59,6 +61,7 @@ public class BookService {
 	    	new RuntimeException("Book not available");
 	    }
 	    return booksRepository.save(book);
+	    
 	}
 	
 	public Books returnBookFrontEnd(Long userId, Long contentId) {
@@ -89,6 +92,67 @@ public class BookService {
 	
         reservation.setReservationStatus(status);
         reservationsRepository.save(reservation);
+	}
+	
+	public boolean updateWaitList(String bookName) {
+		Iterator<Reservations> reservations = showReservations().iterator();
+		while(reservations.hasNext()) {
+			Reservations reservation = reservations.next();
+			if (reservation.getBookName() == bookName) {
+				reservation.setReservationStatus(ReservationStatus.UITGELEEND);
+				reservationsRepository.save(reservation);
+				break;
+			}
+		}
+		return true;
+	}
+	
+	public void updateReservationFrontEnd(Long reservationId, ReservationStatus status) {
+		boolean inReservation = false;
+		Reservations reservation = reservationsRepository.findById(reservationId)
+                .orElseThrow(() -> new RuntimeException("Reservation not found"));
+		
+		 if (status == ReservationStatus.TERUG_GEBRACHT) {
+	            Books book = reservation.getBook();
+	            if (book != null) {
+	                book.setAvailable(true);
+	                booksRepository.save(book);
+	                inReservation = updateWaitList(book.getContentName());
+	            }
+	        }
+		 if(!inReservation) {
+			 reservation.setReservationStatus(status);
+		     reservationsRepository.save(reservation);
+		 }
+		
+	}
+	
+	public Reservations updateReservationBookFrontEnd(Long userId, Long contentId) {
+		Trainee trainee = traineer.findByUserId(userId)
+                .orElseThrow(() -> new RuntimeException("Trainee not found"));
+		Books book = booksRepository.findByContentId(contentId);
+		
+		Reservations reservation = new Reservations();
+        reservation.setTrainee(trainee);
+        reservation.setBook(book); // Associate the book entity
+        reservation.setBookName(book.getContentName()); // Set the book name
+        reservation.setReservationDate(new Date(System.currentTimeMillis()));
+        reservation.setReservationStatus(ReservationStatus.IN_AFWACHTING); // Set the initial reservation status
+	    
+	    if(book.isAvailable()) {
+	    	book.setAvailable(false);
+	    	reservation.setReservationStatus(ReservationStatus.UITGELEEND); // Set the initial reservation status
+	    }
+
+	    booksRepository.save(book);
+	    
+        return reservationsRepository.save(reservation);  
+	}
+	
+
+	
+	public Iterable<Reservations> showReservations(){
+		return reservationsRepository.findAll();
 	}
 	
 	public Iterable<Books> showBooks() {
