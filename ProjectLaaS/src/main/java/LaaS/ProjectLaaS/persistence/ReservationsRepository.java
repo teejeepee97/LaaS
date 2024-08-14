@@ -8,5 +8,5 @@ import LaaS.ProjectLaaS.model.Reservations;
 
 @Component
 public interface ReservationsRepository extends CrudRepository <Reservations, Long>{
-
+	
 }
