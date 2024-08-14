@@ -48,7 +48,7 @@ public class InlogService {
 	    Trainer trainer = trainerr.findByName(username).orElse(null);
 	    
 	    if (trainer != null) {
-	        if (trainer.getPasswordHash().equals(password)) {
+	        if (trainer.getPasswordHash().equals(hashed_password)) {
 	            return trainer; // Return the authenticated Trainer
 	        } else {
 	            throw new RuntimeException("Incorrect password for Trainer");
