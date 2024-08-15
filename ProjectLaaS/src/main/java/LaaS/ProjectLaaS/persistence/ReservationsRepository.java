@@ -1,12 +1,7 @@
 package LaaS.ProjectLaaS.persistence;
 
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Component;
-
-import LaaS.ProjectLaaS.model.LearningPaths;
 import LaaS.ProjectLaaS.model.Reservations;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Component
-public interface ReservationsRepository extends CrudRepository <Reservations, Long>{
-	
+public interface ReservationsRepository extends JpaRepository<Reservations, Long> {
 }

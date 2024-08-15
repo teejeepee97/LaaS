@@ -6,26 +6,13 @@ import jakarta.persistence.OneToOne;
 @MappedSuperclass
 public class PhysicalContent extends Content{
 	
-	private int physicalContentId;
-	private int amount;
+//	private int physicalContentId;
 	private boolean available;
 	private String physicalWear;
 	
 	@OneToOne
 	private Reservations reservation;
-	
-	public int getPhysicalContentId() {
-		return physicalContentId;
-	}
-	public void setPhysicalContentId(int physicalContentId) {
-		this.physicalContentId = physicalContentId;
-	}
-	public int getAmount() {
-		return amount;
-	}
-	public void setAmount(int amount) {
-		this.amount = amount;
-	}
+
 	public boolean isAvailable() {
 		return available;
 	}

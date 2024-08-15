@@ -10,10 +10,7 @@ import LaaS.ProjectLaaS.model.Trainer;
 
 @Component
 public interface TrainerRepository extends CrudRepository <Trainer, Long>{
-	
-
 	Optional<Trainer> findByUserId(long userId);
-	
 	Optional<Trainer> findByName(String name);
 	
 		

@@ -19,22 +19,22 @@ public class BookEndpoint {
 	@Autowired
 	private BookService BookService; 
 	
-	@GetMapping("/reserve")
-    public Reservations reserveBook(@RequestParam long userId, @RequestParam long physicalContentId) {
-        return BookService.reserveBook(userId, physicalContentId);
-    }
+//	@GetMapping("/reserve")
+//    public Reservations reserveBook(@RequestParam long userId, @RequestParam long physicalContentId) {
+//        return BookService.reserveBook(userId, physicalContentId);
+//    }
 	
-	@GetMapping("/reserveFrontEnd/{userId}/{contentId}")
-    public Books reserveBookFrontEnd(@PathVariable("userId") long userId, @PathVariable("contentId") long contentId) {
-        return BookService.reserveBookFrontEnd(userId, contentId);
-    }
+//	@GetMapping("/reserveFrontEnd/{userId}/{contentId}")
+//    public Books reserveBookFrontEnd(@PathVariable("userId") long userId, @PathVariable("contentId") long contentId) {
+//        return BookService.reserveBookFrontEnd(userId, contentId);
+//    }
 	
 	
-	@GetMapping("/updateReservationStatus")
-    public void updateReservationStatus(@RequestParam Long reservationId, @RequestParam ReservationStatus status) {
-        BookService.updateReservationStatus(reservationId, status);
-    }
-	
+//	@GetMapping("/updateReservationStatus")
+//    public void updateReservationStatus(@RequestParam Long reservationId, @RequestParam ReservationStatus status) {
+//        BookService.updateReservationStatus(reservationId, status);
+//    }
+//	
 	@GetMapping("/showBooks")
     public Iterable<Books> showBooks() {
         return BookService.showBooks();
@@ -49,10 +49,21 @@ public class BookEndpoint {
 		BookService.saveBook(book);
 	}
 	
-	@GetMapping("/returnFrontEnd/{userId}/{contentId}")
-    public Books returnBookFrontEnd(@PathVariable("userId") long userId, @PathVariable("contentId") long contentId) {
-        return BookService.returnBookFrontEnd(userId, contentId);
-    }
+//	@GetMapping("/returnFrontEnd/{userId}/{contentId}")
+//    public Books returnBookFrontEnd(@PathVariable("userId") long userId, @PathVariable("contentId") long contentId) {
+//        return BookService.returnBookFrontEnd(userId, contentId);
+//    }
+	
+	@GetMapping("/reserveFrontEnd/{userId}/{bookId}")
+	public Books reserveBookFrontEnd(@PathVariable("userId") long userId, @PathVariable("bookId") long bookId) {
+	    return BookService.reserveBookFrontEnd(userId, bookId);
+	}
+
+	@GetMapping("/returnFrontEnd/{userId}/{bookId}")
+	public Books returnBookFrontEnd(@PathVariable("userId") long userId, @PathVariable("bookId") long bookId) {
+	    return BookService.returnBookFrontEnd(userId, bookId);
+	}
+
 }	
 	
 

@@ -1,12 +1,7 @@
 package LaaS.ProjectLaaS.persistence;
 
-
 import LaaS.ProjectLaaS.model.Books;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-
-import org.springframework.data.repository.CrudRepository;
-
-public interface BooksRepository extends CrudRepository<Books, Long> {
-		Books findByPhysicalContentId(Long physicalContentId);
-		Books findByContentId(long contentId);
+public interface BooksRepository extends JpaRepository<Books, Long> {
 }
