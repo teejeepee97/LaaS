@@ -19,6 +19,7 @@ public class Reservations {
 	private long reservationId;
 	private Date reservationDate;
 	private int userId;
+	private long contentId;
 	
 	@Enumerated(EnumType.STRING)
 	private ReservationStatus reservationStatus;
@@ -74,6 +75,14 @@ public class Reservations {
 
     public void setReservationStatus(ReservationStatus reservationStatus) {
         this.reservationStatus = reservationStatus;
+    }
+    
+    public long getContentId() {
+    	return book.getContentId();
+    }
+    
+    public void setContentId() {
+    	this.contentId = book.getContentId();
     }
 
 }
