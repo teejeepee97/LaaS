@@ -12,7 +12,7 @@ import java.sql.Date;
 
 @Entity
 public class Reservations {
-	
+    long contentId;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long reservationId;
@@ -52,13 +52,13 @@ public class Reservations {
         this.reservationStatus = reservationStatus;
     }
     
-    // public long getContentId() {
-    // 	return book.getContentId();
-    // }
+    public long getContentId() {
+    	return book.getContentId();
+    }
     
-    // public void setContentId() {
-    // 	this.contentId = book.getContentId();
-    // }
+    public void setContentId() {
+    	this.contentId = book.getContentId();
+    }
 
     public Trainee getTrainee() {
         return trainee;
