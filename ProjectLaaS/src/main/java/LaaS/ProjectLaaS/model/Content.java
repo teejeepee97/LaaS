@@ -7,9 +7,9 @@ import jakarta.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public class Content {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
 	private long contentId;
 //	private int courseId;
 	private String contentName;

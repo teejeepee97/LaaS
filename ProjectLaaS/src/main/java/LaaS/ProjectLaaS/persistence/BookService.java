@@ -1,26 +1,24 @@
 package LaaS.ProjectLaaS.persistence;
 
-import java.sql.Date;
-import java.util.Iterator;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
-
 import LaaS.ProjectLaaS.model.Books;
 import LaaS.ProjectLaaS.model.PhysicalWear;
 import LaaS.ProjectLaaS.model.ReservationStatus;
 import LaaS.ProjectLaaS.model.Reservations;
 import LaaS.ProjectLaaS.model.Trainee;
 
+import java.sql.Date;
+import java.util.Iterator;
+
 @Service
 public class BookService {
-	
-	@Autowired
-	private TraineeRepository traineer;
-	
-	@Autowired
+
+    @Autowired
+    private TraineeRepository traineeRepository;
+
+    @Autowired
     private BooksRepository booksRepository;
 	
 	@Autowired
@@ -28,7 +26,6 @@ public class BookService {
 	
 	public void updateWaitList(String bookName) {
 		Iterator<Reservations> reservations = showReservations().iterator();
-		
 		while(reservations.hasNext()) {
 			Reservations reservation = reservations.next();
 			if (reservation.getBookName().equals(bookName) && reservation.getReservationStatus() == ReservationStatus.IN_AFWACHTING) {
@@ -61,13 +58,12 @@ public class BookService {
 	
 	public Reservations updateReservationBookFrontEnd(Long userId, Long contentId) {
 		Trainee trainee = traineer.findByUserId(userId)
+
                 .orElseThrow(() -> new RuntimeException("Trainee not found"));
-		Books book = booksRepository.findByContentId(contentId);
-		
-		Reservations reservation = new Reservations();
+
+        Reservations reservation = new Reservations();
         reservation.setTrainee(trainee);
-        reservation.setBook(book); // Associate the book entity
-        reservation.setBookName(book.getContentName()); // Set the book name
+        reservation.setBook(book);
         reservation.setReservationDate(new Date(System.currentTimeMillis()));
         reservation.setReservationStatus(ReservationStatus.IN_AFWACHTING); // Set the initial reservation status
         reservation.setContentId();
@@ -237,3 +233,16 @@ public class BookService {
 //    }
 //    return book;
 //}
+
+//     private void updateReservationStatusForReturnedBook(Books book) {
+//         Iterator<Reservations> reservations = reservationsRepository.findAll().iterator();
+//         while (reservations.hasNext()) {
+//             Reservations reservation = reservations.next();
+//             if (reservation.getBook().equals(book) && reservation.getReservationStatus() == ReservationStatus.UITGELEEND) {
+//                 reservation.setReservationStatus(ReservationStatus.TERUG_GEBRACHT);
+//                 reservationsRepository.save(reservation);
+//                 updateWaitList(book.getContentName());
+//                 break;
+//             }
+//         }
+//     }

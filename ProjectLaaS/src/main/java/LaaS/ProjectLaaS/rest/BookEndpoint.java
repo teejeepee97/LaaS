@@ -28,18 +28,17 @@ public class BookEndpoint {
 //    public Reservations reserveBook(@RequestParam long userId, @RequestParam long physicalContentId) {
 //        return BookService.reserveBook(userId, physicalContentId);
 //    }
-//	
+
 //	@GetMapping("/reserveFrontEnd/{userId}/{contentId}")
 //    public Books reserveBookFrontEnd(@PathVariable("userId") long userId, @PathVariable("contentId") long contentId) {
 //        return BookService.reserveBookFrontEnd(userId, contentId);
 //    }
-//	
-//	
+
 //	@GetMapping("/updateReservationStatus")
 //    public void updateReservationStatus(@RequestParam Long reservationId, @RequestParam ReservationStatus status) {
 //        BookService.updateReservationStatus(reservationId, status);
 //    }
-	
+
 	@GetMapping("/showBooks")
     public Iterable<Books> showBooks() {
         return BookService.showBooks();
@@ -58,7 +57,7 @@ public class BookEndpoint {
 //    public Books returnBookFrontEnd(@PathVariable("userId") long userId, @PathVariable("contentId") long contentId) {
 //        return BookService.returnBookFrontEnd(userId, contentId);
 //    }
-	
+
 	@GetMapping("reserveBook/{userId}/{contentId}")
 	public Reservations updateReservationBookFrontEnd(@PathVariable("userId") long userId, @PathVariable("contentId") long contentId) {
 		System.out.println("hier wel reservation?");

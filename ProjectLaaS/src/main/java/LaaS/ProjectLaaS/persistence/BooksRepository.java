@@ -1,6 +1,5 @@
 package LaaS.ProjectLaaS.persistence;
 
-
 import LaaS.ProjectLaaS.model.Books;
 import LaaS.ProjectLaaS.model.ReservationStatus;
 import LaaS.ProjectLaaS.model.DTO.showBooksObject;
@@ -27,3 +26,4 @@ public interface BooksRepository extends CrudRepository<Books, Long> {
 		
 		
 }
+

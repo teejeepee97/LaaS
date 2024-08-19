@@ -23,31 +23,43 @@ public class InlogEndpoint {
 	private final InlogService inlogService = new InlogService();
 
 	
+//	@GetMapping("/login/{username}/{password}")
+//    public InlogObject login(@PathVariable String username, @PathVariable String password) {
+//		try {
+//	        if (inlogService.authenticate(username, password) != null) {
+//	            //return "Login successful!";
+//	           // return inlogService.authenticate(username, password);
+////	        	InlogObject inlogObject = new InlogObject();
+//	        	User a = inlogService.authenticate(username, password);
+////	        	inlogObject.setName(a.getName());
+////	        	inlogObject.setUserId(a.getUserId());
+////	        	if (a instanceof Trainee ) {
+////	        		inlogObject.setRol("Trainee");
+////	        	}else {
+////	        		inlogObject.setRol("Trainer");
+////	        	}	
+//	        	return new InlogObject(a);
+//	        } else {
+//	            //return "Invalid username or password.";
+//	            return null;
+//	        }
+//		} catch(Exception e) {
+//			//return "Unknown username";
+//			return null;
+//		}
+//	}
+	
+	
 	@GetMapping("/login/{username}/{password}")
-    public InlogObject login(@PathVariable String username, @PathVariable String password) {
-		try {
-	        if (inlogService.authenticate(username, password) != null) {
-	            //return "Login successful!";
-	           // return inlogService.authenticate(username, password);
-//	        	InlogObject inlogObject = new InlogObject();
-	        	User a = inlogService.authenticate(username, password);
-//	        	inlogObject.setName(a.getName());
-//	        	inlogObject.setUserId(a.getUserId());
-//	        	if (a instanceof Trainee ) {
-//	        		inlogObject.setRol("Trainee");
-//	        	}else {
-//	        		inlogObject.setRol("Trainer");
-//	        	}	
-	        	return new InlogObject(a);
-	        } else {
-	            //return "Invalid username or password.";
-	            return null;
-	        }
-		} catch(Exception e) {
-			//return "Unknown username";
-			return null;
-		}
+	public InlogObject login(@PathVariable String username, @PathVariable String password) {
+	    try {
+	        User user = inlogService.authenticate(username, password);
+	        return new InlogObject(user);
+	    } catch(Exception e) {
+	        return null;
+	    }
 	}
+
 	@GetMapping("/SnappenWijEvenDTOs")
 	public void SnappenWijEvenDTOs(InlogObject io) {
 		User u = io.verkrijgUser();

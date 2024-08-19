@@ -18,22 +18,4 @@ public class EnrollService {
 	private LearningPathsRepository learningpathsr;
 	
 	
-	
-//	public void slaEnrollmentOp(Long T, Long L) {
-//		learningpathsr.save(L);
-//		T.setLearningPathsTrainee(L);
-//		traineer.save(T);
-//		
-//	}
-//	
-//	
-//	public Iterable<Trainee> geefAlleTrainees() {
-//		return traineer.findAll();
-//		
-//	}
-	
-    
-    
-
-
 }

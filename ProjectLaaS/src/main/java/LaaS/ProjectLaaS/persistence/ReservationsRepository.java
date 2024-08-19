@@ -17,3 +17,4 @@ public interface ReservationsRepository extends CrudRepository <Reservations, Lo
 	@Query(value="SELECT * FROM laas.reservations;", nativeQuery=true)
 	List<Reservations> getReservations();
 }
+
