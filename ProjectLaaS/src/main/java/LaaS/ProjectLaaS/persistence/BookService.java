@@ -11,6 +11,7 @@ import LaaS.ProjectLaaS.model.Trainee;
 
 import java.sql.Date;
 import java.util.Iterator;
+import java.util.List;
 
 @Service
 public class BookService {
@@ -28,7 +29,7 @@ public class BookService {
 		Iterator<Reservations> reservations = showReservations().iterator();
 		while(reservations.hasNext()) {
 			Reservations reservation = reservations.next();
-			if (reservation.getBookName().equals(bookName) && reservation.getReservationStatus() == ReservationStatus.IN_AFWACHTING) {
+			if (reservation.getBook().getContentName().equals(bookName) && reservation.getReservationStatus() == ReservationStatus.IN_AFWACHTING) {
 				reservation.setReservationStatus(ReservationStatus.UITGELEEND);
 				reservation.getBook().setAvailable(false);
 				reservationsRepository.save(reservation);
@@ -57,17 +58,18 @@ public class BookService {
 	}
 	
 	public Reservations updateReservationBookFrontEnd(Long userId, Long contentId) {
-		Trainee trainee = traineer.findByUserId(userId)
-
+		Trainee trainee = traineeRepository.findByUserId(userId)
                 .orElseThrow(() -> new RuntimeException("Trainee not found"));
 
-        Reservations reservation = new Reservations();
-        reservation.setTrainee(trainee);
-        reservation.setBook(book);
-        reservation.setReservationDate(new Date(System.currentTimeMillis()));
-        reservation.setReservationStatus(ReservationStatus.IN_AFWACHTING); // Set the initial reservation status
-        reservation.setContentId();
-        System.out.println(reservation.getReservationStatus());
+		Books book = booksRepository.findByContentId(contentId);
+
+	        Reservations reservation = new Reservations();
+	        reservation.setTrainee(trainee);
+	        reservation.setBook(book);
+	        reservation.setReservationDate(new Date(System.currentTimeMillis()));
+	        reservation.setReservationStatus(ReservationStatus.IN_AFWACHTING); // Set the initial reservation status
+	        reservation.setContentId();
+	        System.out.println(reservation.getReservationStatus());
 	    
 	    if(book.isAvailable()) {
 	    	book.setAvailable(false);
@@ -93,11 +95,11 @@ public class BookService {
 		booksRepository.save(book);
 	}
 	
-	public ReservationStatus getReservationStatus(long contentId) {
-		Reservations reservation = reservationsRepository.findByContentId(contentId)
-				.orElseThrow(() -> new RuntimeException("Content not found"));
-		return reservation.getReservationStatus();
-	}
+	// public ReservationStatus getReservationStatus(long contentId) {
+	// 	Reservations reservation = reservationsRepository.findByContentId(contentId)
+	// 			.orElseThrow(() -> new RuntimeException("Content not found"));
+	// 	return reservation.getReservationStatus();
+	// }
 	
 	public Books updatePhysicalWear(Long contentId, PhysicalWear newWear) {
 		Books book = booksRepository.findByContentId(contentId);
