@@ -51,6 +51,14 @@ public class Reservations {
     public void setReservationStatus(ReservationStatus reservationStatus) {
         this.reservationStatus = reservationStatus;
     }
+    
+    public long getContentId() {
+    	return book.getContentId();
+    }
+    
+    public void setContentId() {
+    	this.contentId = book.getContentId();
+    }
 
     public Trainee getTrainee() {
         return trainee;

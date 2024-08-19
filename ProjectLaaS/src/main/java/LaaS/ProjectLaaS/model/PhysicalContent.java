@@ -1,14 +1,17 @@
 package LaaS.ProjectLaaS.model;
 
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.OneToOne;
 
 @MappedSuperclass
 public class PhysicalContent extends Content{
 	
-//	private int physicalContentId;
 	private boolean available;
-	private String physicalWear;
+	
+	@Enumerated(EnumType.STRING)
+	private PhysicalWear physicalWear;
 	
 	@OneToOne
 	private Reservations reservation;
@@ -19,10 +22,10 @@ public class PhysicalContent extends Content{
 	public void setAvailable(boolean available) {
 		this.available = available;
 	}
-	public String getPhysicalWear() {
+	public PhysicalWear getPhysicalWear() {
 		return physicalWear;
 	}
-	public void setPhysicalWear(String physicalWear) {
+	public void setPhysicalWear(PhysicalWear physicalWear) {
 		this.physicalWear = physicalWear;
 	}
 	public Reservations getReservation() {
@@ -31,6 +34,4 @@ public class PhysicalContent extends Content{
 	public void setReservation(Reservations reservation) {
 		this.reservation = reservation;
 	}
-	
-	
 }
