@@ -19,7 +19,7 @@ public interface BooksRepository extends CrudRepository<Books, Long> {
 		
 		//@Query(value="SELECT laas.reservations.reservation_id, laas.books.content_name, laas.books.available, laas.books.content_description, laas.books.content_subject, laas.books.content_id, laas.books.amount, laas.books.physical_content_id, laas.books.physical_wear, laas.books.reservation_reservation_id FROM laas.books JOIN laas.reservations ON laas.books.content_id = laas.reservations.content_id WHERE laas.reservations.reservation_status =:status;", nativeQuery=true)
 		//@Query(value="SELECT new LaaS.ProjectLaas.model.DTO.showBooksObject(b.content_name, b.available, b.content_description, b.content_subject, b.content_id, b.amount, b.physical_content_id, b.physical_wear, r.reservation_id)FROM laas.books b JOIN laas.reservations r ON laas.books.content_id = laas.reservations.content_id WHERE laas.reservations.reservation_status =:status;", nativeQuery=true)
-		@Query(value="SELECT b.content_name, b.available, b.content_description, b.content_subject, b.content_id, b.amount, b.physical_content_id, b.physical_wear, r.reservation_id FROM laas.books b JOIN laas.reservations r ON b.content_id = r.content_id WHERE r.reservation_status =:status;", nativeQuery=true)
+		@Query(value="SELECT b.content_name, b.available, b.content_description, b.content_subject, b.content_id, b.physical_wear, r.reservation_id FROM laas.books b JOIN laas.reservations r ON b.content_id = r.content_id WHERE r.reservation_status =:status;", nativeQuery=true)
 		List<showBooksProjection> findByReservationStatus(@Param("status") String status);
 		
 		
