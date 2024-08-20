@@ -30,7 +30,7 @@ public class SimpleCORSFilter implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("http://127.0.0.1:5500", "https://red-smoke-07c837103.5.azurestaticapps.net") // Add your frontend origin(s) here
+                .allowedOrigins("http://127.0.0.1:5500", "https://yellow-rock-06745b703.5.azurestaticapps.net") // Add your frontend origin(s) here
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);  // Allow credentials (cookies, authorization headers, etc.)
