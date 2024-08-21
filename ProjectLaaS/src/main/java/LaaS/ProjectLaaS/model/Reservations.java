@@ -24,7 +24,7 @@ public class Reservations {
 //    private Trainee trainee;
     
     @ManyToOne
-    private User user;
+    private String userName;
 
     @ManyToOne
     private Books book;
@@ -58,16 +58,12 @@ public class Reservations {
     	return book.getContentId();
     }
 
-    public User getUser() {
-        return user;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUser(Trainee trainee) {
-        this.user = trainee;
-    }
-    
-    public void setUser(Trainer trainer) {
-    	this.user = trainer;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
     
     public Books getBook() {

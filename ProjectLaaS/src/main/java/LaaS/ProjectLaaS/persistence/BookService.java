@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 import LaaS.ProjectLaaS.model.Books;
+import LaaS.ProjectLaaS.model.PasswordHasher;
 import LaaS.ProjectLaaS.model.PhysicalWear;
 import LaaS.ProjectLaaS.model.ReservationStatus;
 import LaaS.ProjectLaaS.model.Reservations;
@@ -61,17 +62,18 @@ public class BookService {
 	        }
 	}
 	
-	public Reservations updateReservationBookFrontEnd(String rol, Long userId, Long contentId) {
+	public Reservations updateReservationBookFrontEnd(String username, Long contentId) {
 		Reservations reservation = new Reservations();
-		if(rol.equals("Trainee")) {
-			Trainee trainee = traineeRepository.findByUserId(userId).orElseThrow(() -> new RuntimeException("Trainee not found"));
-			reservation.setUser(trainee);
-		}
-		else {
-			Trainer trainer = trainerRepository.findByUserId(userId).orElseThrow(() -> new RuntimeException("Trainer not found"));
-			reservation.setUser(trainer);
-		}
-		
+	    Trainee trainee = traineeRepository.findByName(username).orElse(null);
+	    
+	    if (trainee != null) {
+	    	reservation.setUserName(username);
+	    }
+	    else {
+	    	Trainer trainer = trainerRepository.findByName(username).orElse(null);
+	    	reservation.setUserName(username);
+	    }
+	    
 		Books book = booksRepository.findByContentId(contentId);
 
         reservation.setBook(book);
