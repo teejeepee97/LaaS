@@ -12,7 +12,6 @@ import LaaS.ProjectLaaS.model.Reservations;
 
 @Component
 public interface ReservationsRepository extends CrudRepository <Reservations, Long>{
-	Optional<Reservations> findByContentId(long contentId);
 	//Iterable<Reservations> findByReservationStatus(ReservationStatus reservationStatus);
 	@Query(value="SELECT * FROM laas.reservations;", nativeQuery=true)
 	List<Reservations> getReservations();
