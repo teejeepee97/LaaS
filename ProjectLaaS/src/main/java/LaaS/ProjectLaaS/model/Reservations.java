@@ -12,7 +12,6 @@ import java.sql.Date;
 
 @Entity
 public class Reservations {
-    long contentId;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long reservationId;
@@ -21,8 +20,11 @@ public class Reservations {
     @Enumerated(EnumType.STRING)
     private ReservationStatus reservationStatus;
 
+//    @ManyToOne
+//    private Trainee trainee;
+    
     @ManyToOne
-    private Trainee trainee;
+    private User user;
 
     @ManyToOne
     private Books book;
@@ -55,19 +57,19 @@ public class Reservations {
     public long getContentId() {
     	return book.getContentId();
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(Trainee trainee) {
+        this.user = trainee;
+    }
     
-    public void setContentId() {
-    	this.contentId = book.getContentId();
+    public void setUser(Trainer trainer) {
+    	this.user = trainer;
     }
-
-    public Trainee getTrainee() {
-        return trainee;
-    }
-
-    public void setTrainee(Trainee trainee) {
-        this.trainee = trainee;
-    }
-
+    
     public Books getBook() {
         return book;
     }
