@@ -7,20 +7,8 @@ import java.util.List;
 
 @Entity
 public class Trainee extends User {
-    @OneToMany(mappedBy = "trainee")
-    private List<Reservations> reservations;
-
     @OneToOne
     private LearningPaths learningPaths;
-
-    // Getters and Setters
-    public List<Reservations> getReservations() {
-        return reservations;
-    }
-
-    public void setReservations(List<Reservations> reservations) {
-        this.reservations = reservations;
-    }
 
     public LearningPaths getLearningPaths() {
         return learningPaths;
