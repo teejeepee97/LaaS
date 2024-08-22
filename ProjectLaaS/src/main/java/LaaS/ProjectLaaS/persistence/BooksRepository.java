@@ -21,5 +21,11 @@ public interface BooksRepository extends CrudRepository<Books, Long> {
 		//@Query(value="SELECT new LaaS.ProjectLaas.model.DTO.showBooksObject(b.content_name, b.available, b.content_description, b.content_subject, b.content_id, b.amount, b.physical_content_id, b.physical_wear, r.reservation_id)FROM laas.books b JOIN laas.reservations r ON laas.books.content_id = laas.reservations.content_id WHERE laas.reservations.reservation_status =:status;", nativeQuery=true)
 		@Query(value="SELECT b.content_name, b.available, b.content_description, b.content_subject, b.content_id, b.physical_wear, r.reservation_id FROM laas.books b JOIN laas.reservations r ON b.content_id = r.book_content_id WHERE r.reservation_status =:status;", nativeQuery=true)
 		List<showBooksProjection> findByReservationStatus(@Param("status") String status);
+		
+		@Query(value="SELECT COUNT(user_name) FROM laas.reservations WHERE user_name=:userName AND reservation_status != \"TERUG_GEBRACHT\";", nativeQuery=true)
+		Integer findCountByUsername(@Param("userName") String userName);
+		
+		@Query(value="SELECT b.content_name FROM laas.books b JOIN laas.reservations r ON b.content_id = r.book_content_id WHERE r.user_name=:userName ",nativeQuery=true)
+		List<showReservedBooksProjection> findReserveredBooksByUsername(@Param("userName") String userName);
 }
 

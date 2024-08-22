@@ -23,7 +23,6 @@ public class Reservations {
 //    @ManyToOne
 //    private Trainee trainee;
     
-    @ManyToOne
     private String userName;
 
     @ManyToOne

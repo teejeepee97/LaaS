@@ -59,9 +59,9 @@ public class BookEndpoint {
 //    }
 
 	@GetMapping("reserveBook/{username}/{contentId}")
-	public Reservations updateReservationBookFrontEnd(@PathVariable("username") String username, @PathVariable("contentId") long contentId) {
+	public String updateReservationBookFrontEnd(@PathVariable("username") String username, @PathVariable("contentId") long contentId) {
 		System.out.println("hier wel reservation?");
-		return BookService.updateReservationBookFrontEnd(username, contentId);
+		return BookService.updateReservationBookFrontEnd3(username, contentId);
 	}
 	
 	//Get the status of a reservation by its contentId
