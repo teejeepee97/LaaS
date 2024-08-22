@@ -86,7 +86,7 @@ public class BookEndpoint {
     	return BookService.showBooksByReservationStatus(reservationStatus);
     }
     
-    @GetMapping("showReservations/")
+    @GetMapping("/showReservations")
     public Iterable<Reservations> getReservations(){
     	return BookService.getAllReservations();
     }
