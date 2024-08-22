@@ -1,18 +1,10 @@
 package LaaS.ProjectLaaS.model;
 
-import java.util.List;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
+import java.util.List;
 
 @Entity
-public class Trainer extends User{
+public class Trainer extends User {
 
-	
-//	@ManyToMany
-//	private List <LearningPaths> LearningPathsTrainer = new ArrayList();
-	
-	@OneToMany
-	private List<Reservations> reservation;
-	
 }
