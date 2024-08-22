@@ -13,6 +13,7 @@ import LaaS.ProjectLaaS.model.Books;
 import LaaS.ProjectLaaS.model.PhysicalWear;
 import LaaS.ProjectLaaS.model.ReservationStatus;
 import LaaS.ProjectLaaS.model.Reservations;
+import LaaS.ProjectLaaS.model.Trainee;
 import LaaS.ProjectLaaS.model.DTO.showBooksObject;
 import LaaS.ProjectLaaS.persistence.BookService;
 import LaaS.ProjectLaaS.persistence.showBooksProjection;
@@ -42,6 +43,11 @@ public class BookEndpoint {
 	@GetMapping("/showBooks")
     public Iterable<Books> showBooks() {
         return BookService.showBooks();
+    }
+	
+	@GetMapping("/showTrainees")
+    public Iterable<Trainee> showTrainees() {
+        return BookService.showTrainees();
     }
 	
 	@GetMapping("/addBook/{newTitle}")
