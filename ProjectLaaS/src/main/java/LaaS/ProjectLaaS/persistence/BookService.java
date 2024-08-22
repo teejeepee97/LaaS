@@ -164,7 +164,7 @@ public class BookService {
 	    reservation.setReservationStatus(status);
 	    booksRepository.save(book);
 	    reservationsRepository.save(reservation); 
-	    return String.format("Reservation for book %s has been reserved by user s%",book.getContentName(), username);
+	    return String.format("Reservation for book %s has been reserved by user %s",book.getContentName(), username);
 	}
 
 	public Iterable<Reservations> showReservations(){
