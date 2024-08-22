@@ -87,6 +87,7 @@ public class BookService {
 	    }
 
 	    booksRepository.save(book);
+	    System.out.println("Hier");
         return reservationsRepository.save(reservation);  
 	}
 	
@@ -98,6 +99,11 @@ public class BookService {
 	public Iterable<Books> showBooks() {
 		System.out.println("check showbooks");
 		return booksRepository.findAll();
+	}
+	
+	public Iterable<Trainee> showTrainees() {
+		System.out.println("check showTrainees");
+		return traineeRepository.findAll();
 	}
 
 	public void saveBook(Books book) {
