@@ -8,8 +8,6 @@ import jakarta.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public class User {
-	
-	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long userId;

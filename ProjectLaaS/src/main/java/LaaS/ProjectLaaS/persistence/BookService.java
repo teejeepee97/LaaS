@@ -91,7 +91,82 @@ public class BookService {
         return reservationsRepository.save(reservation);  
 	}
 	
+	public void specifyReservation(String username, Books book, Reservations reservation) {
+		reservation.setUserName(username);
+		reservation.setBook(book);
+        reservation.setReservationDate(new Date(System.currentTimeMillis()));
+        ReservationStatus status = ReservationStatus.IN_AFWACHTING; 
+	    if (book.isAvailable()) {
+	        book.setAvailable(false);
+	        status = ReservationStatus.UITGELEEND; // Set the initial reservation status if the book is available
+	    }
+	    reservation.setReservationStatus(status);
+	}
 	
+	public Reservations updateReservationBookFrontEnd2(String username, Long contentId) {
+		boolean canMakeReservation = false;
+		Reservations reservation = new Reservations();
+		Books book = booksRepository.findByContentId(contentId);
+	    Trainee trainee = traineeRepository.findByName(username).orElse(null);
+	    
+	    if (trainee != null) {
+	    	if(booksRepository.findCountByUsername(username) < 3) {
+	    		specifyReservation(username, book, reservation);
+	    		canMakeReservation = true;
+	    	}
+	    	else {
+	    		System.out.println("The maximum amount a reservations has been reached.");
+	    		throw new IllegalArgumentException("The maximum amount a reservations has been reached.");
+	    	}
+	    }
+	    else {
+	    	Trainer trainer = trainerRepository.findByName(username).orElse(null);
+	    	specifyReservation(username, book, reservation);
+	    	canMakeReservation = true;
+	    }
+	    
+	    if(canMakeReservation) {
+	    	booksRepository.save(book);
+	        return reservationsRepository.save(reservation);  
+	    }
+	    else {
+	    	return null;
+	    }
+	}
+	
+	public String updateReservationBookFrontEnd3(String username, Long contentId) {
+	    Books book = booksRepository.findByContentId(contentId);
+	    if (book == null) {
+	        throw new IllegalArgumentException("Book with the given content ID does not exist.");
+	    }
+
+	    Trainee trainee = traineeRepository.findByName(username).orElse(null);
+	    List<showReservedBooksProjection> reservedBooksList = booksRepository.findReserveredBooksByUsername(username);
+	    if (reservedBooksList.stream().anyMatch(reservation -> reservation.getContentName().equals(book.getContentName()))) {
+//	        throw new IllegalArgumentException("Book already in reservations by this user.");
+	    	return String.format("%s has already been reserved by %s", book.getContentName(), username);
+	    }
+
+	    if (trainee != null && booksRepository.findCountByUsername(username) >= 3) {
+//	        throw new IllegalArgumentException("The maximum amount of reservations has been reached.");
+	        return "Your maximum amount of reservations has been reached.";
+	    }
+
+	    Reservations reservation = new Reservations();
+	    reservation.setUserName(username);
+		reservation.setBook(book);
+        reservation.setReservationDate(new Date(System.currentTimeMillis()));
+        ReservationStatus status = ReservationStatus.IN_AFWACHTING; 
+	    if (book.isAvailable()) {
+	        book.setAvailable(false);
+	        status = ReservationStatus.UITGELEEND; // Set the initial reservation status if the book is available
+	    }
+	    reservation.setReservationStatus(status);
+	    booksRepository.save(book);
+	    reservationsRepository.save(reservation); 
+	    return String.format("Reservation for book %s has been reserved by user s%",book.getContentName(), username);
+	}
+
 	public Iterable<Reservations> showReservations(){
 		return reservationsRepository.findAll();
 	}
